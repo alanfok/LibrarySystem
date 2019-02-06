@@ -1,12 +1,15 @@
 const express = require("express");
-var app = express();
-var db = require("./db/sql_connect");
-
+const app = express();
+const db = require("./db/sql_connect");
+const api = require("./routes/api");
 
 app.get('/', (req,res)=>{
         res.send("helloWorld");
     }
 );
+
+app.use('/api',api);
+
 
 
 app.listen(5000,()=>{
