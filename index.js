@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const db = require("./db/sql_connect");
 const api = require("./routes/api");
+const book = require("./routes/book");
+
 
 app.get('/', (req,res)=>{
         res.send("helloWorld");
@@ -9,6 +11,8 @@ app.get('/', (req,res)=>{
 );
 
 app.use('/api',api);
+
+app.use("/book",book);
 
 
 
